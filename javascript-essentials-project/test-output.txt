@@ -1,0 +1,263 @@
+
+================ CHALLENGE 1: VARIABLES, TYPES AND TYPEOF ================
+typeof fullName: string
+typeof age: number
+typeof enjoysJavaScript: boolean
+typeof favouriteTemperature: number
+typeof notANumber: number
+typeof infiniteValue: number
+typeof maximumSafeInteger: number
+typeof emptyValue: object
+typeof missingValue: undefined
+typeof introduction: string
+typeof null: object
+typeof NaN: number
+typeof undefined: undefined
+typeof "42": string
+typeof (typeof 42): string
+typeof [1, 2, 3]: object
+typeof function() {}: function
+
+================ CHALLENGE 2: TYPE CONVERSION ================
+
+Starting value "123": 123 | typeof: string
+Number: 123 | typeof: number
+parseInt: 123 | typeof: number
+parseFloat: 123 | typeof: number
+Boolean: true | typeof: boolean
+String: 123 | typeof: string
+
+Starting value "3.14": 3.14 | typeof: string
+Number: 3.14 | typeof: number
+parseInt: 3 | typeof: number
+parseFloat: 3.14 | typeof: number
+Boolean: true | typeof: boolean
+String: 3.14 | typeof: string
+
+Starting value "hello": hello | typeof: string
+Number: NaN | typeof: number
+parseInt: NaN | typeof: number
+parseFloat: NaN | typeof: number
+Boolean: true | typeof: boolean
+String: hello | typeof: string
+
+Starting value "42abc": 42abc | typeof: string
+Number: NaN | typeof: number
+parseInt: 42 | typeof: number
+parseFloat: 42 | typeof: number
+Boolean: true | typeof: boolean
+String: 42abc | typeof: string
+
+Starting value empty string:  | typeof: string
+Number: 0 | typeof: number
+parseInt: NaN | typeof: number
+parseFloat: NaN | typeof: number
+Boolean: false | typeof: boolean
+String:  | typeof: string
+
+Starting value zero: 0 | typeof: number
+Number: 0 | typeof: number
+parseInt: 0 | typeof: number
+parseFloat: 0 | typeof: number
+Boolean: false | typeof: boolean
+String: 0 | typeof: string
+
+Starting value null: null | typeof: object
+Number: 0 | typeof: number
+parseInt: NaN | typeof: number
+parseFloat: NaN | typeof: number
+Boolean: false | typeof: boolean
+String: null | typeof: string
+
+Starting value undefined: undefined | typeof: undefined
+Number: NaN | typeof: number
+parseInt: NaN | typeof: number
+parseFloat: NaN | typeof: number
+Boolean: false | typeof: boolean
+String: undefined | typeof: string
+"5" + 3 => 53 | typeof: string | The + operator joins a string and a number into text.
+"5" - 3 => 2 | typeof: number | Subtraction converts the numeric string to a number.
+"5" * "2" => 10 | typeof: number | Multiplication converts both strings to numbers.
+true + 1 => 2 | typeof: number | true becomes 1 during numeric addition.
+true + "1" => true1 | typeof: string | The string causes + to concatenate after true becomes text.
+false + null => 0 | typeof: number | false and null both become 0 in this numeric operation.
+null + undefined => NaN | typeof: number | undefined converts to NaN, so the result is NaN.
+1 / 0 => Infinity | typeof: number | Dividing a positive number by zero gives Infinity.
+0 / 0 => NaN | typeof: number | Zero divided by zero is undefined mathematically, so JavaScript returns NaN.
+"abc" - 1 => NaN | typeof: number | The text cannot convert to a number, so the result is NaN.
+[] + [] =>  | typeof: string | Both arrays become empty strings, so the result is an empty string.
+[1] + [2] => 12 | typeof: string | Arrays become strings, so the result is the text 12.
+
+================ CHALLENGE 3: OPERATORS MASTERCLASS ================
+Net salary: 30800 | 7 % 2 gives remainder: 1
+Cart total after discount and VAT: 470.92499999999995
+Signup valid: true
+Premium dashboard access: true
+Converted age: 25 | dark mode: true
+Premium Member
+Welcome back Thabo Nkosi, you are 28 years old.
+Welcome back Thabo Nkosi, you are 28 years old.
+
+================ CHALLENGE 4: EQUALITY DEEP DIVE ================
+Prediction before running: 0 == false => true; verified result: true; Loose equality converts false to 0.
+Prediction before running: 0 === false => false; verified result: false; Strict equality does not convert number to boolean.
+Prediction before running: "" == 0 => true; verified result: true; An empty string converts to 0 in loose equality.
+Prediction before running: "" === 0 => false; verified result: false; String and number are different types.
+Prediction before running: "0" == 0 => true; verified result: true; Loose equality converts the numeric string to 0.
+Prediction before running: "0" === 0 => false; verified result: false; Strict equality compares both type and value.
+Prediction before running: null == undefined => true; verified result: true; Loose equality treats null and undefined as equal to each other.
+Prediction before running: null === undefined => false; verified result: false; Null and undefined are different types.
+Prediction before running: null == 0 => false; verified result: false; The special null rule does not make null equal to zero.
+Prediction before running: null >= 0 => true; verified result: true; Relational comparison converts null to 0.
+Prediction before running: null > 0 => false; verified result: false; After conversion to 0, zero is not greater than zero.
+Prediction before running: NaN == NaN => false; verified result: false; NaN is unequal to every value, including itself.
+Prediction before running: NaN === NaN => false; verified result: false; Strict equality also treats NaN as unequal to itself.
+Prediction before running: Object.is(NaN, NaN) => true; verified result: true; Object.is treats NaN as the same value as itself.
+Prediction before running: +0 === -0 => true; verified result: true; Strict equality treats positive and negative zero as equal.
+Prediction before running: Object.is(+0, -0) => false; verified result: false; Object.is distinguishes positive zero from negative zero.
+Prediction before running: [1,2,3] == "1,2,3" => true; verified result: true; The array converts to the string 1,2,3.
+Prediction before running: [] == false => true; verified result: true; The array becomes an empty string, then 0, matching false after conversion.
+Prediction before running: [] == 0 => true; verified result: true; The empty array converts to an empty string and then to 0.
+Prediction before running: [0] == false => true; verified result: true; The array converts to the string 0, then numeric 0, matching false.
+Reset test case 1 (should pass):
+PASS: Passwords match exactly
+PASS: Emails match exactly
+PASS: Password is not the current email
+PASS: Password has at least 8 characters
+Reset test case 2 (should fail):
+FAIL: Passwords match exactly
+FAIL: Emails match exactly
+FAIL: Password is not the current email
+PASS: Password has at least 8 characters
+
+================ CHALLENGE 5: OPERATOR PRECEDENCE ================
+2 + 3 * 4 - 1 => 13 | order: Multiplication first, then addition, then subtraction.
+(2 + 3) * (4 - 1) => 15 | order: Parentheses evaluate each addition/subtraction before multiplication.
+10 - 4 - 2 => 4 | order: Subtraction is left-associative: (10 - 4) - 2.
+2 ** 3 ** 2 => 512 | order: Exponentiation is right-associative: 2 ** (3 ** 2).
+10 % 3 * 2 + 1 => 3 | order: Modulo, then multiplication, then addition.
+100 / 4 / 5 => 5 | order: Division is left-associative: (100 / 4) / 5.
+5 + 2 > 6 && 3 < 4 => true | order: Addition, comparisons, then logical AND.
+true && false || true && true => true | order: AND groups first, then OR.
+!false && !!0 => false | order: Unary NOT operators first, then AND.
+5 > 3 && 10 < 20 || !(2 === "2") => true | order: Comparisons and strict equality, NOT, AND, then OR.
+1000 * 1.15 * 0.9 => 1035 | order: Multiplication runs left to right.
+typeof 5 + 1 => number1 | order: typeof runs first and returns the string "number", then + concatenates 1.
+typeof (5 + 1) => number | order: Parentheses calculate 6 first, then typeof returns "number".
+"5" + 3 * 2 => 56 | order: Multiplication runs first, then + concatenates.
+"5" - 3 + 2 => 4 | order: Subtraction converts text to a number, then addition runs.
+
+================ CHALLENGE 6: TERNARY AND SHORT-CIRCUIT ================
+95% => A
+82% => B
+73% => C
+65% => D
+54% => E
+42% => F
+0% => F
+100% => A
+{
+  displayName: 'Guest User',
+  theme: 'light',
+  maxResults: 10,
+  lastLogin: 'Never',
+  notificationCount: 0
+}
+{
+  displayName: 'Thabo',
+  theme: 'light',
+  maxResults: 10,
+  lastLogin: 'Never',
+  notificationCount: 0
+}
+{
+  guardedCity: 'Johannesburg',
+  optionalCity: 'Johannesburg',
+  cityWithDefault: 'Johannesburg'
+}
+{
+  guardedCity: undefined,
+  optionalCity: undefined,
+  cityWithDefault: 'Unknown city'
+}
+{
+  guardedCity: null,
+  optionalCity: undefined,
+  cityWithDefault: 'Unknown city'
+}
+null || undefined || 0 || "" || "finally" => finally | typeof: string
+null ?? undefined ?? 0 ?? "" ?? "finally" => 0 | typeof: number
+0 || "first truthy" => first truthy | typeof: string
+0 ?? "first non-nullish" => 0 | typeof: number
+true && false && "never reached" => false | typeof: boolean
+"first" && "second" && "third" => third | typeof: string
+false || (true && "yes") => yes | typeof: string
+(false || true) && "yes" => yes | typeof: string
+1 && 2 && 3 => 3 | typeof: number
+null?.foo?.bar?.baz => undefined | typeof: undefined
+
+================ CHALLENGE 7: TYPEOF, INSTANCEOF, DELETE ================
+typeof 42 => number
+typeof "hello" => string
+typeof true => boolean
+typeof undefined => undefined
+typeof null => object
+typeof {} => object
+typeof [] => object
+typeof function() {} => function
+typeof NaN => number
+typeof undeclaredVariable: undefined
+Array check: true
+instanceof tests: {
+  arrayIsArray: true,
+  arrayIsObject: true,
+  objectIsObject: true,
+  primitiveString: false,
+  boxedString: true,
+  primitiveNumber: false,
+  date: true,
+  regexp: true
+}
+Before delete: { name: 'Lerato', age: 25, role: 'student' }
+After delete: { name: 'Lerato', age: 25 }
+delete on a variable property is not valid in strict mode; x remains: 5
+After deleting array index: [ 1, <1 empty item>, 3, 4 ] | length: 4 | index 1: undefined
+delete Math.PI: false | Math.PI: 3.141592653589793
+
+================ CHALLENGE 8: BITWISE PERMISSIONS ================
+First user READ + WRITE flags: 3
+Admin has all permissions: 15
+First user has READ? Yes
+First user has DELETE? No
+After granting DELETE: 7
+After revoking WRITE: 5
+ADMIN toggled on: 9
+ADMIN toggled off: 1
+SUPER_ADMIN flag: 16
+
+================ CHALLENGE 9: PAYROLL AND BANKING ================
+Payroll: {
+  gross: 'R 45,000.00',
+  paye: 'R 11,250.00',
+  uif: 'R 177.12',
+  medicalAid: 'R 2,500.00',
+  pension: 'R 3,375.00',
+  deductions: 'R 17,302.12',
+  net: 'R 27,697.88'
+}
+Validated form salary net: R 27,697.88
+Savings final balance: R 31,286.15
+Total interest earned: R 6,286.15
+Effective annual rate: 7.76%
+Balance R 500.00: monthly fee R 25.00, annual fee R 300.00
+Balance R 1,500.00: monthly fee R 50.00, annual fee R 600.00
+Balance R 10,000.00: monthly fee R 75.00, annual fee R 900.00
+Balance R 50,000.00: monthly fee R 0.00, annual fee R 0.00
+Transfer commission: R 393.76
+ZAR after commission: R 15,356.57
+USD received: $833.69
+
+================ CHALLENGE 11: BUG HUNT ================
+Corrected subtotal: R 499.49
+Can checkout? true
+Corrected total: R 516.97

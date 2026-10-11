@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge 10 | User Interaction</title>
+</head>
+<body>
+  <h1>JavaScript Essentials 1: Challenge 10</h1>
+  <p>Refresh the page to try the alert, prompt and confirm flow.</p>
+  <script>
+    // 1. Welcome the user with an alert.
+    window.alert('Welcome to the JavaScript Essentials demo!');
+
+    // 2. Ask for a name. Cancel and blank input both use Guest.
+    const nameInput = window.prompt('What is your name?');
+    const cleanName = nameInput === null || nameInput.trim() === '' ? 'Guest' : nameInput.trim();
+
+    // 3. Convert the age text to a number and stop if it is invalid.
+    const ageInput = window.prompt('How old are you?');
+    const userAge = ageInput === null || ageInput.trim() === '' ? NaN : Number(ageInput);
+    if (Number.isNaN(userAge) || userAge < 1 || userAge > 120) {
+      window.alert('Please enter a valid age between 1 and 120. The demo will stop now.');
+    } else {
+      // 4. Use a ternary expression to assign the age group.
+      const tier = userAge < 18 ? 'Youth' : userAge < 60 ? 'Adult' : 'Senior';
+
+      // 5. confirm() returns a boolean: true for OK and false for Cancel.
+      const newsletterSubscribed = window.confirm('Do you want to subscribe to our newsletter?');
+
+      // 6. Show the user's answers in a final summary.
+      window.alert(`Summary\nName: ${cleanName}\nAge: ${userAge}\nTier: ${tier}\nNewsletter: ${newsletterSubscribed ? 'Subscribed' : 'Not subscribed'}`);
+    }
+
+    /* Interview answers:
+       1. Blocking means the browser pauses this script until the user responds. Too many blocking dialogs interrupt
+          the experience and stop the user from interacting with the page during the prompt.
+       2. Modern apps usually use accessible HTML forms, custom modal/dialog components, inline validation and toast messages.
+       3. prompt() returns null when Cancel is clicked. If the user leaves the field blank and clicks OK, it returns ''. */
+  </script>
+</body>
+</html>
